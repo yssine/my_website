@@ -1,8 +1,8 @@
-www.lyassine.com {
-    redir https://lyassine.com{uri}
+www.mywebsite.lyassine.com {
+    redir https://mywebsite.lyassine.com{uri}
 }
 
-lyassine.com {
+mywebsite.lyassine.com {
     tls /etc/ssl/mycert-chain.pem /etc/ssl/mykey.pem
     reverse_proxy http://127.0.0.1:8000
 }
