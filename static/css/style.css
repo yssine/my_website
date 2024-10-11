@@ -1,0 +1,147 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* body {
+    display: flex;
+    flex-direction: column;
+} */
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.content {
+    flex-grow: 1; /* This will take up remaining space, pushing the footer to the bottom */
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #1f1f1f;
+    color: #ffffff;
+}
+
+
+body {
+    background-color: #121212;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #1f1f1f;
+    padding: 10px 20px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between; /* Spread items across navbar */
+    align-items: center; /* Vertically center the navbar items */
+    padding: 10px 20px;
+}
+
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    color: #4CAF50;
+}
+
+.content {
+    padding: 20px;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #1f1f1f;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.grid-item {
+    text-align: center;
+    background-color: #1f1f1f;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.grid-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.grid-item p {
+    margin-top: 10px;
+    color: #ffffff;
+}
+
+.eyes {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    margin-left: auto;
+    margin-right: 20px;
+}
+
+.eye {
+    width: 25px;
+    height: 40px;
+    background-color: white;
+    border-radius: 50%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
+    transition: opacity 0.2s; /* Smooth transition for blinking */
+}
+
+.pupil {
+    width: 12px;
+    height: 12px;
+    background-color: black;
+    border-radius: 50%;
+    position: absolute;
+    transition: opacity 0.2s; /* Smooth transition for blinking */
+}
+
+
+#snake-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+canvas {
+    background-color: #000;
+    border: 2px solid #ffffff;
+    display: block;
+}

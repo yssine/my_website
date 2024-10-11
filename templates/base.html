@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='house.png') }}">
+    
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="{{ url_for('index') }}">Home</a></li>
+                    <li><a href="{{ url_for('about') }}">About</a></li>
+                    <li><a href="{{ url_for('projects') }}">Projects</a></li>
+                    <li><a href="{{ url_for('contact') }}">Contact</a></li>
+                </ul>
+                 <!-- Eyes -->
+                 <div class="eyes">
+                    <div class="eye" id="eye-left">
+                        <div class="pupil" id="pupil-left"></div>
+                    </div>
+                    <div class="eye" id="eye-right">
+                        <div class="pupil" id="pupil-right"></div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        
+        <div class="content">
+            {% block content %}{% endblock %}
+        </div>
+        
+        <footer>
+            <p>© 2024 Yassine LAHMER - All Rights Reserved</p>
+        </footer>
+    </div>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

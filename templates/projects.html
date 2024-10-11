@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block title %}Projects{% endblock %}
+
+{% block content %}
+<h1>My Projects</h1>
+<div class="grid-container">
+    <div class="grid-item">
+        <a href="{{ url_for('project_detail', project_name='home_lab_server') }}">
+            <img src="{{ url_for('static', filename='images/proxmox.png') }}" alt="Home Lab Server">
+            <p>Home Lab Server</p>
+        </a>
+    </div>
+    <div class="grid-item">
+        <a href="{{ url_for('project_detail', project_name='mpls_automation') }}">
+            <img src="{{ url_for('static', filename='images/mpls.png') }}" alt="MPLS Automation">
+            <p>Automation of MPLS Network Configuration</p>
+        </a>
+    </div>
+    <div class="grid-item">
+        <a href="{{ url_for('project_detail', project_name='green_guardian') }}">
+            <img src="{{ url_for('static', filename='images/iot.png') }}" alt="Green Guardian">
+            <p>Green Guardian</p>
+        </a>
+    </div>
+    <div class="grid-item">
+        <a href="{{ url_for('project_detail', project_name='3g_4g_optimization') }}">
+            <img src="{{ url_for('static', filename='images/coverage.png') }}" alt="3G/4G Optimization">
+            <p>Optimization of 3G/4G Coverage</p>
+        </a>
+    </div>
+    <div class="grid-item">
+        <a href="{{ url_for('project_detail', project_name='chat_app') }}">
+            <img src="{{ url_for('static', filename='images/chatapp.png') }}" alt="ChatApp">
+            <p>ChatApp</p>
+        </a>
+    </div>
+</div>
+{% endblock %}
