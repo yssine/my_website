@@ -1,4 +1,4 @@
-www.lyassine.com{
+www.lyassine.com {
     redir https://lyassine.com{uri}
 }
 
