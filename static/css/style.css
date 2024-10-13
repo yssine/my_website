@@ -2,6 +2,7 @@ html, body {
     height: 100%;
     margin: 0;
     padding: 0;
+    overflow: auto; 
 }
 
 /* body {
@@ -150,6 +151,7 @@ body {
     background-color: #1a1a1a;
     color: #f0f0f0;
     font-family: 'Press Start 2P', cursive;
+    /* background: no-repeat url("../images/retro.jpg"); */
 }
 
 .container {
@@ -187,21 +189,26 @@ p {
 }
 
 .button:hover {
-    background-color: #f0f0f0;
+    background-color: #1a1a1a;
     color: #39ff14;
+
 }
 
 .section {
     margin: 50px 0;
 }
 
-.skills, .projects {
+.skills, .projects, .contacts {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
 }
 
-.skill, .project {
+.skill, .project, .contact{
     background-color: #333;
     border: 2px solid #39ff14;
     padding: 20px;
@@ -209,6 +216,15 @@ p {
     width: 250px;
     border-radius: 10px;
     text-align: left;
+    min-width: 35%;
+}
+
+
+.skill:hover, .project:hover, .contact:hover {
+    background-color: #1a1a1a;
+    color: #39ff14;
+    cursor: pointer;
+    border: 2px solid #f0f0f0;;
 }
 
 .footer {
@@ -233,3 +249,13 @@ body::before {
     opacity: 0.2;
     z-index: -1;
 }
+
+video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    max-width: 100vw;
+    max-height: 100vh;
+    z-index:-100;
+    opacity: 0.1;
+  }
