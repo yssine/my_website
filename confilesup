@@ -12,7 +12,7 @@ supervisor.rpcinterface_factory = supervisor.rpcinterface:make_main_rpcinterface
 serverurl=http://127.0.0.1:9001
 
 [program:portfolio]
-command= ~/env/portfolio/bin/gunicorn --log-level debug wsgi:app --bind 0.0.0.0:6969 --workers 5 --worker-class gevent
+command= /home/yassine/env/portfolio/bin/gunicorn --log-level debug wsgi:app --bind 0.0.0.0:6969 --workers 5 --worker-class gevent
 directory=/home/yassine/Projects/my_website/
 stdout_logfile=/home/yassine/Projects/my_website/supervisor_stdout.log
 stderr_logfile=/home/yassine/Projects/my_website/supervisor_stderr.log
