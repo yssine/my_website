@@ -274,8 +274,8 @@ video {
   }
 
 .abt{
-    /* text-align: left; */
-    text-align: justify;
+    text-align: left;
+    /* text-align: justify; */
     padding-top: 10px;
     /* word-spacing: normal; */
 }
