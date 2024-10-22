@@ -1,6 +1,6 @@
 Caddyfile
 confilesup
 deploy.txt
-static/templates/index1.html
-static/templates/about1.html
+templates/index1.html
+templates/about1.html
 draft.html
