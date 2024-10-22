@@ -1,8 +1,0 @@
-www.portfolio.lyassine.com {
-    redir https://portfolio.lyassine.com{uri}
-}
-
-portfolio.lyassine.com {
-    tls /etc/ssl/certs/Cloudflare_CA.pem
-    reverse_proxy http://192.186.1.12:5000
-}
