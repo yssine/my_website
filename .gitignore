@@ -1,5 +1,5 @@
 Caddyfile
-#confilesup
+confilesup
 deploy.txt
 templates/index1.html
 templates/base1.html
