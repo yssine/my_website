@@ -24,6 +24,11 @@ def projects():
 def project_detail(project_name):
     return render_template(f'projects/{project_name}.html')
 
+@app.route('/education')
+def education():
+    return render_template('education.html')
+
+
 
 
 if __name__ == '__main__':

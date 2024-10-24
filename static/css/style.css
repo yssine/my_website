@@ -37,6 +37,9 @@ footer {
 header {
     background-color: #1f1f1f;
     padding: 10px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 999;
 }
 
 nav {
@@ -44,6 +47,9 @@ nav {
     justify-content: space-between; /* Spread items across navbar */
     align-items: center; /* Vertically center the navbar items */
     padding: 10px 20px;
+
+
+
 }
 
 
@@ -83,21 +89,39 @@ footer {
 }
 
 .grid-item {
+    display: flex;
     text-align: center;
-    background-color: #1f1f1f;
+    background-color: #222222;
     border-radius: 10px;
     padding: 10px;
+    height: 400px;
 }
 
 .grid-item img {
     width: 100%;
     height: auto;
     border-radius: 10px;
+    margin-bottom: auto;
+
 }
 
 .grid-item p {
+    position: relative;
     margin-top: 10px;
     color: #ffffff;
+    bottom: 0;
+    text-decoration: none;
+}
+.grid-item a {
+    text-decoration: none;
+}
+
+.void {
+    flex-grow: 1;
+    background-color: red;
+    min-height: 10px;
+    position: relative;
+    bottom: 0px;
 }
 
 .eyes {
@@ -228,6 +252,7 @@ p {
     border-radius: 10px;
     text-align: left;
     min-width: 35%;
+
 }
 
 
@@ -278,6 +303,28 @@ video {
     /* text-align: justify; */
     padding-top: 10px;
     /* word-spacing: normal; */
+}
+
+.education-section {
+    margin-top: 20px;
+}
+
+.education-item {
+    text-align: left;
+    background-color: #1f1f1f;
+    padding: 20px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+}
+
+.education-item h2 {
+    font-size: 20px;
+    color: #ffffff;
+}
+
+.education-item p {
+    font-size: 16px;
+    color: #cccccc;
 }
 
 
