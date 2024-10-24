@@ -1,0 +1,22 @@
+[supervisord]
+nodaemon=true
+
+
+[inet_http_server]         
+port=127.0.0.1:9001
+
+[rpcinterface:supervisor]
+supervisor.rpcinterface_factory = supervisor.rpcinterface:make_main_rpcinterface
+
+[supervisorctl]
+serverurl=http://127.0.0.1:9001
+
+[program:portfolio]
+command= /home/yassine/env/portfolio/bin/gunicorn --log-level debug wsgi:app --bind 0.0.0.0:6969 --workers 5 --worker-class gevent
+directory=/home/yassine/Projects/my_website/
+stdout_logfile=/home/yassine/Projects/my_website/supervisor_stdout.log
+stderr_logfile=/home/yassine/Projects/my_website/supervisor_stderr.log
+user=yassine
+autostart=true
+autorestart=true
+environment=PYTHONPATH="$PYTHONPATH:/home/yassine/Projects/my_website";OAUTHLIB_INSECURE_TRANSPORT='1';
