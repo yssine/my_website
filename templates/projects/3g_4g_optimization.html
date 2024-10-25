@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block title %}Home Lab Server{% endblock %}
+
+{% block content %}
+<h1>Home Lab Server</h1>
+<img src="{{ url_for('static', filename='images/house.png') }}" style="height: 400px; width: auto;" alt="Home Lab Server">
+<p>This project involved deploying a Proxmox server to host multiple virtual machines and containers. Technologies used: Proxmox, Ubuntu Server, Kali Linux, TrueNAS, Pi-Hole.</p>
+{% endblock %}
