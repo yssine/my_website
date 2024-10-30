@@ -1,0 +1,38 @@
+{% extends 'Mbase.html' %}
+
+{% block title %}Projects{% endblock %}
+
+{% block content %}
+<h1>My Projects</h1>
+
+
+
+<div class="projects">
+    <a href="{{ url_for('project_detail', project_name='Mhome_lab_server') }}" class="project">
+        <img src="{{ url_for('static', filename='images/proxmox.png') }}" style="height: 190px; width: 190px;" alt="Home Lab Server">
+        <h3>Home Lab Server</h3>
+    </a>
+    <a href="{{ url_for('project_detail', project_name='Mmpls_automation') }}" class="project">
+        <img src="{{ url_for('static', filename='images/mpls.png') }}" style="height: 190px; width: 190px;" alt="Home Lab Server">
+        <h3>Automation of MPLS Network Configuration</h3>
+    </a>
+    <a href="{{ url_for('project_detail', project_name='Mgreen_guardian') }}" class="project">
+        <img src="{{ url_for('static', filename='images/GG.png') }}" style="width: 190px; height: 190px;" alt="Home Lab Server">
+        <h3>Green Guardian</h3>
+    </a>
+    <a href="{{ url_for('project_detail', project_name='M3g_4g_optimization') }}"class="project">
+        <img src="{{ url_for('static', filename='images/house.png') }}" style="height: 190px; width: 190px;" alt="Home Lab Server">
+        <h3>Optimization of 3G/4G Coverage</h3>
+    </a>
+    <a href="{{ url_for('project_detail', project_name='Mchat_app') }}" class="project">
+        <img src="{{ url_for('static', filename='images/PyQt.png') }}" style="height: 190px; width: 190px;" alt="Home Lab Server">
+        <h3>ChatApp</h3>
+    </a>
+    <a href="{{ url_for('project_detail', project_name='Mportfolio') }}" class="project">
+        <img src="{{ url_for('static', filename='images/term.png') }}" style="height: 190px; width: 190px;" alt="Home Lab Server">
+        <h3>Personal website</h3>
+    </a>
+    
+</div>
+
+{% endblock %}

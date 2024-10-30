@@ -38,6 +38,7 @@ footer {
 
 header {
     background-color: #1f1f1f;
+    max-height: max-content;
     padding: 10px 20px;
     position: sticky;
     top: 0;
@@ -195,10 +196,11 @@ h1 {
     font-size: 36px;
     text-transform: uppercase;
     margin-bottom: 20px;
+    line-height: 120%;
 }
 
 p {
-    font-size: 14px;
+    font-size: 100%;
     line-height: 1.5;
     margin: 10px 0;
 }
@@ -243,13 +245,18 @@ p {
     border: 2px solid #39ff14;
     padding: 20px;
     margin: 10px;
-    width: 250px;
+    width: 350px;
     border-radius: 10px;
     text-align: left;
-    min-width: 35%;
+    min-width: 350px;
 
 }
 
+.contact p {
+    /* font-size: 0.8dvw;
+    font-size: 1vmax; */
+    font-size: 12px;
+}
 
 .skill:hover, .contact:hover {
     background-color: #1a1a1a;
@@ -281,7 +288,7 @@ body::before {
     z-index: -1;
 }
 
-video {
+/* video {
     position: absolute;
     top: 0;
     left: 0;
@@ -291,7 +298,7 @@ video {
     min-height: 100vh;
     z-index:-100;
     opacity: 0.1;
-  }
+  } */
 
 .abt{
     text-align: left;
@@ -313,12 +320,12 @@ video {
 }
 
 .education-item h2 {
-    font-size: 20px;
+    font-size: 1.3dvw;
     color: #ffffff;
 }
 
 .education-item p {
-    font-size: 16px;
+    font-size: 0.8dvw;
     color: #cccccc;
 }
 
@@ -441,6 +448,7 @@ video {
     background-color: #3a3a3a;
     border-radius: 10px;
     height: 300px;
+    /* min-height: max-content; */
     width: 250px;
     margin: auto;
     padding: 10px 0px 0px 0px;
@@ -462,6 +470,12 @@ video {
 a {
     text-decoration: none;
     color: #39ff14;
+}
+.blogtext a:hover {
+    color: #39ff14;
+    text-shadow: 
+    0 0 20px #2ecc71,
+    0 0 30px #2ecc71;
 }
 
 
@@ -518,7 +532,7 @@ a {
 
 .popup span {
     position: absolute;
-    top: 0; right: 10px;
+    top: 5px; right: 10px;
     font-size: 40px;
     font-weight: bolder;
     color: #fff;
@@ -534,6 +548,28 @@ a {
     object-fit: cover;
 }
 
+
+
+.vdoctr {
+    /* float: right; */
+    /* margin-left: 15px; */
+    /* width: 45dvw; */
+    max-width: 750px;
+    /* min-width: 400px; */
+    height: auto;
+    /* cursor: pointer; */
+}
+.vdo {
+    float: left;
+    width: 50dvw;
+    height: auto;
+    opacity: 1;
+    /* position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%,-50%); */
+    /* max-width: 1900px; */
+    /* object-fit: cover; */
+}
 
 .vmenum {
     text-align: left;
