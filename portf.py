@@ -26,7 +26,7 @@ def about():
 def contact():
     user_agent = request.user_agent.string
     if "Mobile" in user_agent:
-        return render_template('Montact.html')
+        return render_template('Mcontact.html')
     else:
         return render_template('contact.html')
     
