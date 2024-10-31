@@ -44,7 +44,7 @@ def projects():
 def project_detail(project_name):
     user_agent = request.user_agent.string
     if "Mobile" in user_agent:
-        return render_template(f'Mprojects/{project_name}.html')
+        return render_template(f'Mprojects/M{project_name}.html')
     else:
         return render_template(f'projects/{project_name}.html')
     
