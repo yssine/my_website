@@ -29,13 +29,13 @@ const moveStrip = (element, index) => {
     prevIndex = index;
 }
 
-moveStrip(links[0], 0);
+// moveStrip(links[0], 0);
 
-window.addEventListener('resize', () => {
-    moveStrip(links[0], 0);
-    links.forEach(li => li.classList.remove('active'));
-    links[0].classList.add('active');
-});
+// window.addEventListener('resize', () => {
+//     moveStrip(links[0], 0);
+//     links.forEach(li => li.classList.remove('active'));
+//     links[0].classList.add('active');
+// });
 
 navigation.addEventListener('click', (event) => {
     const link = event.target.closest('li');

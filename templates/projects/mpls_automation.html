@@ -4,48 +4,19 @@
 
 {% block content %}
 <h1>Network Configuration Automation</h1>
-<!-- <img class="blogimage" src="{{ url_for('static', filename='images/proxhome.png') }}" alt="Home Lab Server"> -->
 
-<!-- <p>This project involved deploying a Proxmox server to host multiple virtual machines and containers.</p> -->
-
-<div class="popup">
-    <span>&times;</span>
-    
-    <img src="{{ url_for('static', filename='images/proxhome.png') }}" alt="Home Lab Server" style="width : 93dvw;">
-</div>
-
-<p class="blogtext">The goal of this project was to reperpous the e-waste of my old laptop and gain hands-on experience on virtualisation, network administration, system administration, cybersecurit, firwalls, accesses control, docker containers and much more.
+<p class="blogtext">MPLS is widely used in telecommunications and enterprise networks due to its ability to improve data transfer speeds and enhance routing efficiency. However, the manual configuration required for MPLS routing can be complicated and time consuming, particularly when working with extensive network topologies. This project explores a solution: using Python scripting to automate the MPLS network configuration within GNS3, streamlining deployment and ensuring consistency.
 <br>
 <br>
-I used <a href="https://www.proxmox.com/en/" target="_blank">Proxmox</a> as the hypervisor to host my virtual machines and containers.
-In my configuration, I have:
-<ul>
-    <li class="vmenum" class="vmenum">Pi-Hole container</li>
-    <li class="vmenum">Kali Linux machine</li>
-    <li class="vmenum">Ubuntu Server machine</li>
-    <li class="vmenum">CasaOs on Debian machine</li>
-    <li class="vmenum">OpenMediaVault machine</li>
-    <li class="vmenum">Debian machine</li>
-    <li class="vmenum">WUbuntu machine</li>
-</ul>
-</p>
-
-<p class="blogtext">This server allows me to host my personal website on the Ubuntu Server VM, as well as setting up a NAS using samba share and conncting to it from everywhere in the world thanks to <a href="https://tailscale.com" target="_blank">Tailscale</a>.
+The key goals of this automation project were to provide an intuitive way of configuring MPLS networks, reduce the time and effort required for manual configuration, and ensure that the network configuration is consistent across all devices. The Python script developed for this project creats.
+<br>
+<br>
 </p>
 
 
 
 
-<script>
-   
-    document.querySelector('.blogimage').onclick = () =>{
-        document.querySelector('.popup').style.display = 'block'
-    }
 
-    document.querySelector('.popup span').onclick = () =>{
-        document.querySelector('.popup').style.display = 'none'
-    };
-</script>
 
 
 

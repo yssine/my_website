@@ -5,6 +5,7 @@ html, body {
     overflow: auto; 
     line-height: 180%;
     overscroll-behavior: none;
+    scrollbar-width: none;
 }
 
 /* body {
@@ -471,11 +472,20 @@ a {
     text-decoration: none;
     color: #39ff14;
 }
+
+.blogtext a {
+    text-decoration: none;
+    color: #39ff14;
+    transition: text-shadow 0.5s ease-in-out;
+}
+
 .blogtext a:hover {
     color: #39ff14;
     text-shadow: 
     0 0 20px #2ecc71,
     0 0 30px #2ecc71;
+    
+    
 }
 
 
