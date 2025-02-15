@@ -118,6 +118,66 @@ nav ul li:hover {
 
 
 
+.navbar {
+    background-color: #111;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 5;
+    /* position: sticky; */
+    /* top: 0%; */
+}
+
+.menu-icon {
+    font-size: 24px;
+    cursor: pointer;
+    color: #39ff14;
+    position: relative;
+    top: 5%;
+    right: 0%;
+}
+
+.menu {
+    display: none;
+    flex-direction: column;
+    background: #222;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 100%;
+    text-align: left;
+    padding: 10px 0;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+    z-index: 2;
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+    padding: 15px;
+    display: block;
+    font-size: 16px;
+    z-index: 3;
+}
+
+.menu a:hover {
+    background: #39ff14;
+    color: black;
+}
+
+/* Show menu when active */
+.menu.active {
+    display: flex;
+}
+
+
+
+
+
+
+
+
 
 .clock-component * {
     margin: auto;
@@ -146,6 +206,7 @@ nav ul li:hover {
     background: var(--priBg);
     border: 10px solid var(--priBg);
     box-shadow: inset 0px 0px 10px var(--shadowIntensity);
+    z-index: 0;
 
     &::before{
         --wh: 35%;

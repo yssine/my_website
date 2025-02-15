@@ -11,7 +11,7 @@
 </head>
 <body>
     <div class="wrapper">
-        <nav class="gooey-nav">
+        <!-- <nav class="gooey-nav">
             <div class="moving-strip" data-padding="8"></div>
             <ul>
                 <li class="active" data-title="Home" title="Home">
@@ -40,8 +40,22 @@
                     </a>
                 </li>
             </ul>
-        </nav>
+        </nav> -->
         
+
+
+
+        <div class="navbar">
+            <span class="menu-icon" onclick="toggleMenu()">☰</span>
+        </div>
+    
+        <div class="menu" id="dropdownMenu">
+            <a href="{{ url_for('index') }}">Home</a>
+            <a href="{{ url_for('about') }}">About</a>
+            <a href="{{ url_for('education') }}">Education</a>
+            <a href="{{ url_for('projects') }}">Projects</a>
+            <a href="{{ url_for('contact') }}">Contact</a>
+        </div>
         
         <div class="container">
             {% block content %}{% endblock %}
@@ -51,6 +65,20 @@
             <p>© 2024 Yassine LAHMER - All Rights Reserved</p>
         </footer>
     </div>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById("dropdownMenu").classList.toggle("active");
+        }
+        document.addEventListener("click", function(event) {
+            let menu = document.getElementById("dropdownMenu");
+            let menuIcon = document.querySelector(".menu-icon");
+            
+            if (!menu.contains(event.target) && !menuIcon.contains(event.target)) {
+                menu.classList.remove("active");
+            }
+        });
+    </script>
     <!-- <script src="{{ url_for('static', filename='js/script.js') }}"></script>
     <script src="{{ url_for('static', filename='js/nav.js') }}"></script> -->
 
