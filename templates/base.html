@@ -13,6 +13,44 @@
     
 </head>
 <body>
+                                                        <!-- Winter update -->
+    <style>
+    /* SNOW OVERLAY */
+    .snow-layer {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 10;
+    }
+
+    .snowflake {
+      position: absolute;
+      top: -40px;
+      width: 10px;
+      height: 10px;
+      background-image: url("{{ url_for('static', filename='images/Snow1.png') }}");
+      background-size: cover;
+      opacity: 0.3;
+      animation-name: fall;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+    }
+
+    @keyframes fall {
+      0% {
+        transform: translateY(-40px);
+      }
+      100% {
+        transform: translateY(110vh);
+      }
+    }
+</style>
+
+<!-- Snow layer overlay -->
+  <div class="snow-layer" id="snow-layer"></div>
+
+                                                        <!-- Winter update -->
     <!-- <video autoplay muted loop>
         <source src="{{ url_for('static', filename='images/bg.mp4') }}" type="video/mp4">
       </video> -->
@@ -48,9 +86,53 @@
             <p>© 2024 Yassine LAHMER - All Rights Reserved</p>
         </div> -->
         <footer>
-            <p>© 2024 Yassine LAHMER - All Rights Reserved</p>
+            <p>© <span id="year"></span> Yassine LAHMER - All Rights Reserved</p>
         </footer>
     </div>
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    <script>
+        // FOOTER YEAR
+    document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+
+                                                        <!-- Winter Update -->
+    <script>
+    // SNOWFLAKE GENERATOR
+    const snowLayer = document.getElementById("snow-layer");
+
+    function createSnowflake() {
+      const flake = document.createElement("div");
+      flake.className = "snowflake";
+
+      const size = 6 + Math.random() * 10; // 6–16px
+      flake.style.width = size + "px";
+      flake.style.height = size + "px";
+
+      flake.style.left = Math.random() * 100 + "vw";
+      flake.style.opacity = 0.2 + Math.random() * 0.6;
+
+      const duration = 6 + Math.random() * 8; // 6–14s
+      const delay = Math.random() * -duration;
+      flake.style.animationDuration = duration + "s";
+      flake.style.animationDelay = delay + "s";
+
+      snowLayer.appendChild(flake);
+
+      // Clean up when it falls out
+      setTimeout(() => {
+        snowLayer.removeChild(flake);
+      }, (duration + Math.abs(delay)) * 1000 + 1000);
+    }
+
+    // Create initial batch
+    for (let i = 0; i < 60; i++) {
+      createSnowflake();
+    }
+    // Create more over time
+    setInterval(() => {
+      createSnowflake();
+    }, 400);
+    </script>
+                                                        <!-- Winter Update -->
 </body>
 </html>
