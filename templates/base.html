@@ -16,6 +16,428 @@
     
 </head>
 <body>
+
+
+  <style>
+    :root {
+      --neon: #e900fe;
+      --neon-dim: #8b24be;
+      --bg: #0b0b0b;
+      --primary-color: #39FF14; /* Neon Green */
+      --accent-color: #FF00FF;  /* Arcade Pink */
+    }
+
+    html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; 
+    line-height: 180%;
+    overscroll-behavior: none;
+    scrollbar-width: none;
+    background-color: #1a1a1a;
+    color: #ecf0f1;
+    font-family: 'Press Start 2P', cursive;
+    }
+
+    .wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    }
+
+
+
+    footer {
+        text-align: center;
+        font-size: 1dvw;
+        padding: 0px;
+        background-color: #1f1f1f;
+        color: #ecf0f1;
+        z-index: 2;
+
+    }
+
+    header {
+        background-color: #1f1f1f;
+        max-height: max-content;
+        padding: 10px 20px;
+        position: sticky;
+        top: 0;
+        z-index: 998;
+    }
+
+    nav {
+        display: flex;
+        justify-content: space-between; /* Spread items across navbar */
+        align-items: center; /* Vertically center the navbar items */
+        padding: 0px 20px 10px 20px;
+
+
+
+    }
+
+
+
+    .eyes {
+        display: flex;
+        gap: 15px;
+        align-items: center;
+        margin-left: auto;
+        margin-right: 20px;
+    }
+
+    .eye {
+        width: 25px;
+        height: 40px;
+        background-color: white;
+        border-radius: 50%;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
+        transition: opacity 0.2s; /* Smooth transition for blinking */
+    }
+
+    .pupil {
+        width: 12px;
+        height: 12px;
+        background-color: black;
+        border-radius: 50%;
+        position: absolute;
+        transition: opacity 0.2s; /* Smooth transition for blinking */
+    }
+
+    .container {
+        display:grid;
+        overflow: auto; 
+        align-items: center;
+        justify-content: center;
+        width: 90%;
+        max-width: 1200px;
+        margin: 0 auto;
+        text-align: center;
+        padding: 20px;
+        flex-grow: 1; /* This will take up remaining space, pushing the footer to the bottom */
+    }
+
+      .container::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: repeating-linear-gradient(
+        to bottom,
+        rgba(0,0,0,0.15) 0px,
+        rgba(0,0,0,0.15) 1px,
+        transparent 2px,
+        transparent 4px
+      );
+      pointer-events: none;
+    }
+
+    .flicker-text {
+      /* font-size: clamp(2.5rem, 8vw, 6rem);
+      letter-spacing: 0.15em; */
+      cursor: pointer;
+      text-decoration: none;
+
+      font-family: "Neonderthaw", cursive;
+      font-weight: 400;
+      font-style: normal;
+
+      /* font-family: "Vibur", cursive;
+      font-weight: 400;
+      font-style: normal; */
+
+      /* font-family: "Grenze Gotisch", serif;
+      font-optical-sizing: auto;
+      font-weight: 400;
+      font-style: normal; */
+
+      font-size: 3dvw;
+      color: #fe54ff;
+      /* text-transform: uppercase; */
+      /* position: relative; */
+
+      /* Base glow */
+      text-shadow:
+        0 0 4px #fe54ff,
+        0 0 8px #fe54ff,
+        0 0 16px #8b24be,
+        0 0 32px rgba(255, 255, 255, 0.7);
+
+      animation: flicker 3.5s infinite;
+    }
+
+    /* Slight misalignment for broken-tube feel */
+    .flicker-text::after {
+      content: attr(data-text);
+      position: absolute;
+      inset: 0;
+      color: #fe54ff;
+      opacity: 0.15;
+      transform: translate(39px, 19px);
+      filter: blur(1px);
+      pointer-events: none;
+    }
+
+    @keyframes flicker {
+      0%   { opacity: 1; }
+      3%   { opacity: 0.4; }
+      6%   { opacity: 1; }
+      7%   { opacity: 0.2; }
+      8%   { opacity: 1; }
+
+      20%  { opacity: 0.9; }
+      22%  { opacity: 0.3; }
+      23%  { opacity: 0.9; }
+
+      45%  { opacity: 0.8; }
+      46%  { opacity: 0.1; }
+      47%  { opacity: 0.85; }
+
+      70%  { opacity: 1; }
+      72%  { opacity: 0.5; }
+      73%  { opacity: 1; }
+
+      100% { opacity: 0.95; }
+    }
+
+    /* Optional: make individual letters flicker differently */
+    .flicker-text span {
+      display: inline-block;
+      animation: letter-flicker 4s infinite;
+    }
+
+    .flicker-text span:nth-child(odd) {
+      animation-delay: 0.2s;
+    }
+
+    .flicker-text span:nth-child(3n) {
+      animation-delay: 0.6s;
+      
+    }
+    
+
+    @keyframes letter-flicker {
+      0%, 100% { opacity: 1; }
+      10% { opacity: 0.6; }
+      11% { opacity: 1; }
+      30% { opacity: 0.3; }
+      31% { opacity: 1; }
+    }
+
+    h1{
+      /* font-family: "Grenze Gotisch", serif;
+      font-optical-sizing: auto;
+      font-weight: 400;
+      font-style: normal; */
+      font-size: 2.5dvw;
+      color: #f6ff76;
+      display: inline-block;
+      animation: floatGlow 2.6s steps(4) infinite;
+
+    }
+
+    @keyframes floatGlow {
+  0% {
+    transform: translateY(0);
+    text-shadow:
+      0 0 4px #f6ff76,
+      0 0 8px #ffc800;
+  }
+
+  50% {
+    transform: translateY(-8px);
+    text-shadow:
+      0 0 8px #f6ff76,
+      0 0 16px #ffc800,
+      0 0 24px #ffbf00;
+  }
+
+  100% {
+    transform: translateY(0);
+    text-shadow:
+      0 0 4px #f6ff76,
+      0 0 8px #ffc800;
+  }
+    }
+
+    .main-menu {
+      /* font-family: 'Press Start 2P', monospace;
+      font-size: 18px; */
+      color: #f6ff76;
+      display: inline-block; /* REQUIRED for transform */
+    }
+
+    .main-menu.active {
+      /* animation: floatGlow 2.2s ease-in-out infinite; */
+      animation: floatGlow 2.6s steps(4) infinite;
+    }
+
+
+    .main-menu-container {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            text-align: center;
+            width: 30vw;
+        }
+
+        .menu-link {
+
+
+        background-color: #1f1f1f;
+
+        /* padding: 0px 20px;
+        margin-bottom: 0px; */
+        border: 1px solid #ecf0f1;
+        border-radius: 8px;
+        box-shadow: 
+            0 0 .2rem #fff,
+            0 0 .2rem #fff,
+            0 0 1.5rem #bc13fe,
+            0 0 0.8rem #bc13fe,
+            /* 0 0 2.8rem #bc13fe, */
+            inset 0 0 1.3rem #bc13fe; 
+
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 1.5rem;
+          text-decoration: none;
+          color: #ecf0f1;
+          padding: 10px 20px;
+          transition: all 0.2s;
+          /* border: 4px solid transparent; */
+        }
+
+        .menu-link:hover {
+            color: #61f1fd;
+            border: 4px solid #61f1fd;
+            transform: scale(1.1);
+            text-shadow:
+              0 0 2px #61f1fd,
+              0 0 4px #61f1fd,
+              0 0 12px #000000;
+            box-shadow: 
+              0 0 .2rem #fff,
+              0 0 1.5rem #61f1fd,
+              0 0 0.8rem #61f1fd,
+              /* 0 0 2.8rem #bc13fe, */
+              inset 0 0 1.3rem #61f1fd; 
+            /* background: rgba(57, 255, 20, 0.1); */
+        }
+
+        .menu-link::before {
+            content: "> ";
+            opacity: 0;
+        }
+
+        .menu-link:hover::before {
+            opacity: 1;
+        }
+
+    .image-menu{
+      max-height: 12px;
+      width: auto;
+      image-rendering: pixelated;
+    }
+
+    a{
+      cursor: pointer;
+    }
+
+    .abt{
+        background-color: #1f1f1f;
+        text-align: left;
+        /* padding: 0px 20px;
+        margin-bottom: 0px; */
+        border: 1px solid #ecf0f1;
+        border-radius: 8px;
+        box-shadow: 
+            0 0 .2rem #fff,
+            0 0 .2rem #fff,
+            0 0 1.5rem #bc13fe,
+            0 0 0.8rem #bc13fe,
+            /* 0 0 2.8rem #bc13fe, */
+            inset 0 0 1.3rem #bc13fe; 
+
+        /* display: grid; */
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        text-decoration: none;
+        color: #ecf0f1;
+        padding: 10px 20px;
+        transition: all 0.2s;
+
+
+    }
+
+    .abt p{
+      /* font-family: "Grenze Gotisch", serif;
+      font-optical-sizing: auto;
+      font-weight: 400;
+      font-style: normal; */
+      font-size: 1dvw;
+    }
+
+    .contacts {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    }
+    .contact{
+    background-color: #1f1f1f;
+    color: #ecf0f1;
+    text-decoration: none;
+    padding: 20px;
+    margin: 10px;
+    width: 350px;
+    text-align: left;
+    min-width: 350px;
+    border: 1px solid #ecf0f1;
+    border-radius: 8px;
+    box-shadow: 
+        0 0 .2rem #fff,
+        0 0 .2rem #fff,
+        0 0 1.5rem #bc13fe,
+        0 0 0.8rem #bc13fe,
+        /* 0 0 2.8rem #bc13fe, */
+        inset 0 0 1.3rem #bc13fe; 
+
+    }
+
+    .contact p {
+    /* font-size: 0.8dvw;
+    font-size: 1vmax; */
+    font-size: 12px;
+    }
+
+    .contact:hover {
+      background-color: #1a1a1a;
+      border: 1px solid #61f1fd;
+      color: #61f1fd;
+      cursor: pointer;
+      box-shadow: 
+        0 0 .2rem #fff,
+        0 0 1.5rem #61f1fd,
+        0 0 0.8rem #61f1fd,
+        /* 0 0 2.8rem #bc13fe, */
+        inset 0 0 1.3rem #61f1fd; 
+    }
+  </style>
+
+
+
+
+
                                                         <!-- Winter update -->
     <style>
     /* SNOW OVERLAY */

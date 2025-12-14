@@ -135,15 +135,15 @@
       font-style: normal; */
 
       font-size: 3dvw;
-      color: var(--neon);
+      color: #fe54ff;
       /* text-transform: uppercase; */
       /* position: relative; */
 
       /* Base glow */
       text-shadow:
-        0 0 4px var(--neon),
-        0 0 8px var(--neon),
-        0 0 16px var(--neon-dim),
+        0 0 4px #fe54ff,
+        0 0 8px #fe54ff,
+        0 0 16px #8b24be,
         0 0 32px rgba(255, 255, 255, 0.7);
 
       animation: flicker 3.5s infinite;
@@ -154,7 +154,7 @@
       content: attr(data-text);
       position: absolute;
       inset: 0;
-      color: var(--neon);
+      color: #fe54ff;
       opacity: 0.15;
       transform: translate(39px, 19px);
       filter: blur(1px);
