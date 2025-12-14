@@ -411,3 +411,102 @@
         /* 0 0 2.8rem #bc13fe, */
         inset 0 0 1.3rem #61f1fd; 
     }
+
+
+    .blogimage {
+    float: right;
+    margin-left: 15px;
+    width: 45dvw;
+    max-width: 750px;
+    min-width: 400px;
+    height: auto;
+    cursor: pointer;
+}
+
+.blogtext {
+    text-align: left;
+}
+
+
+.popup {
+    position: fixed;
+    top: 0; left: 0;
+    background: rgba(0, 0, 0, 0.9);
+    width: 100%; height: 100%;
+    z-index: 999;
+    display: none;
+}
+
+.popup span {
+    position: absolute;
+    top: 5px; right: 10px;
+    font-size: 40px;
+    font-weight: bolder;
+    color: #fff;
+    cursor: pointer;
+    z-index: 999;
+}
+
+.popup img {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%,-50%);
+    /* max-width: 1900px; */
+    object-fit: cover;
+}
+
+
+
+.vdoctr {
+    /* float: right; */
+    /* margin-left: 15px; */
+    /* width: 45dvw; */
+    max-width: 750px;
+    /* min-width: 400px; */
+    height: auto;
+    /* cursor: pointer; */
+}
+.vdo {
+    float: left;
+    width: 50dvw;
+    height: auto;
+    opacity: 1;
+    /* position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%,-50%); */
+    /* max-width: 1900px; */
+    /* object-fit: cover; */
+}
+
+.vmenum {
+    text-align: left;
+}
+    .blogtext a {
+    text-decoration: none;
+    color: #61f1fd;
+    transition: text-shadow 0.5s ease-in-out;
+}
+
+.blogtext a:hover {
+    color: #61f1fd;
+    text-shadow: 
+    0 0 20px #6aeefa,
+    0 0 30px #72cfd7;
+    
+    
+}
+
+.blog{
+  display: block;
+  padding: 5px;
+  border: 1px solid #ecf0f1;
+  border-radius: 8px;
+  box-shadow: 
+      0 0 .2rem #fff,
+      0 0 .2rem #fff,
+      0 0 1.5rem #bc13fe,
+      0 0 0.8rem #bc13fe,
+      /* 0 0 2.8rem #bc13fe, */
+      inset 0 0 1.3rem #bc13fe; 
+}
+

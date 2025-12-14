@@ -4,18 +4,20 @@
 
 {% block content %}
 <h1>GreenGuardian</h1>
+<div class="blog">
 <img class="blogimage" src="{{ url_for('static', filename='images/flyer.png') }}" alt="GreenGuardian" style="height: 75dvh; width: auto; min-height: 350px;">
 
 
 
 <!-- <p>This project involved deploying a Proxmox server to host multiple virtual machines and containers.</p> -->
 
+
 <div class="popup">
     <span>&times;</span>
     <img src="{{ url_for('static', filename='images/flyer.png') }}" alt="GreenGuardian" style="height : 93dvh;">
 </div>
 
-<p class="blogtext">This was our a school project developed in a team of 5 students; <a href="https://www.linkedin.com/in/kaoutar-el-arrag-891731180/" target="_blank">Kaoutar El Arrag</a>, <a href="https://www.linkedin.com/in/yaazza-ayoub-146528193/" target="_blank">yaazza ayoub</a>, <a href="https://www.linkedin.com/in/essgheir-kawtar-b808a5214/" target="_blank">ESSGHEIR Kawtar</a>, <a href="https://www.linkedin.com/in/amina-sakouti-a56a4322b/" target="_blank">Amina SAKOUTI</a> and myself . The objective of this project was to design an IoT device to assist users in plant care. The device monitors the plant's environment twice daily, providing users with insights into their plants' health. Additionally, it sends alert notifications if any intervention is required to improve the plants' conditions.
+<p class="blogtext">This was our a school project developed in a team of 5 students; <a href="https://www.linkedin.com/in/kaoutar-el-arrag-891731180/" target="_blank">Kaoutar El Arrag</a>, <a href="https://www.linkedin.com/in/yaazza-ayoub-146528193/" target="_blank">Yaazza Ayoub</a>, <a href="https://www.linkedin.com/in/essgheir-kawtar-b808a5214/" target="_blank">ESSGHEIR Kawtar</a>, <a href="https://www.linkedin.com/in/amina-sakouti-a56a4322b/" target="_blank">Amina SAKOUTI</a> and myself . The objective of this project was to design an IoT device to assist users in plant care. The device monitors the plant's environment twice daily, providing users with insights into their plants' health. Additionally, it sends alert notifications if any intervention is required to improve the plants' conditions.
 <br>
 The materials used in this project were:
 <ul>
@@ -38,7 +40,7 @@ The materials used in this project were:
     <source src="{{ url_for('static', filename='videos/Model3D.mp4') }}" type="video/mp4">
 </video>
 
-
+</div>
 <script>
    
     document.querySelector('.blogimage').onclick = () =>{
