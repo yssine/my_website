@@ -4,25 +4,19 @@
 {% block title %}Home{% endblock %}
 
 {% block content %}
-<h1>Welcome to My Website</h1>
-<p>This is the homepage. Feel free to enjoy Packman !</p>
-<p>Press N to start a new game, P to pause and S to mute/unmute.</p>
-<div class="separator"></div>
+<h1 class="main-menu active">Main Menu</h1>
+<div class="main-menu-container">
+  <!-- <a href="{{ url_for('about') }}" class="menu-link"> <img src="{{ url_for('static', filename='images/about.webp') }}" loading="lazy" class="image-menue"> About</a>
+  <a href="{{ url_for('education') }}" class="menu-link"> <img src="{{ url_for('static', filename='images/brain.webp') }}" loading="lazy" class="image-menue"> Education</a>
+  <a href="{{ url_for('projects') }}" class="menu-link"> <img src="{{ url_for('static', filename='images/buildozer.webp') }}" loading="lazy" class="image-menue"> Projects</a>
+  <a href="{{ url_for('contact') }}" class="menu-link"> <img src="{{ url_for('static', filename='images/journal.webp') }}" loading="lazy" class="image-menue"> Contact</a> -->
 
-<div id="pacman"></div>
-<script src="{{ url_for('static', filename='js/modernizr-1.5.min.js') }}"></script>
-<script src="{{ url_for('static', filename='js/snake.js') }}"></script>
+  <a href="{{ url_for('about') }}" class="menu-link" > About</a>
+  <a href="{{ url_for('education') }}" class="menu-link"> Education</a>
+  <a href="{{ url_for('projects') }}" class="menu-link"> Projects</a>
+  <a href="{{ url_for('contact') }}" class="menu-link"> Contact</a>
+</div>
 
-<script>
-
-    var el = document.getElementById("pacman");
-
-    if (Modernizr.canvas && Modernizr.localstorage && 
-        Modernizr.audio && (Modernizr.audio.ogg || Modernizr.audio.mp3)) {
-      window.setTimeout(function () { PACMAN.init(el, "./"); }, 0);
-    } else { 
-      el.innerHTML = "Sorry, needs a decent browser<br /><small>" + 
-        "(firefox 3.6+, Chrome 4+, Opera 10+ and Safari 4+)</small>";
-    }
-</script>
 {% endblock %}
+
+

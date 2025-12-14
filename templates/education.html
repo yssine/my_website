@@ -3,30 +3,93 @@
 {% block title %}Education{% endblock %}
 
 {% block content %}
+
+<style>
+    .education-section{
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        text-align: center;
+    }
+    
+    .education-item {
+        text-align: left;
+        background-color: #1f1f1f;
+        padding: 0px 20px;
+        margin-bottom: 0px;
+        border: 1px solid #ecf0f1;
+        /* animation: pulsate 1.5s infinite alternate;   */
+        border-radius: 8px;
+        box-shadow: 
+            0 0 .2rem #fff,
+            0 0 .2rem #fff,
+            0 0 1.5rem #bc13fe,
+            0 0 0.8rem #bc13fe,
+            /* 0 0 2.8rem #bc13fe, */
+            inset 0 0 1.3rem #bc13fe; 
+    }
+
+    .education-item h2 {
+        font-size: 1.3dvw;
+        color: #ecf0f1;
+    }
+
+    .education-item p {
+        font-size: 0.8dvw;
+        color: #ecf0f1;
+    }
+
+    .major{
+        color: #61f1fd;
+    }
+
+    .school{
+        color: #a064ff;
+    }
+    .degree{
+        color: #fe54ff;
+    }
+
+@keyframes pulsate {
+  0% {
+    box-shadow: 0 -5px .8rem #00ffcc;
+  }
+  50% {
+    box-shadow: 0 5px 1.4rem #00ffcc;
+  }
+  100% {
+    box-shadow: 0 -5px .8rem #00ffcc;
+  }
+}
+
+</style>
+
+
+
 <h1>My Education</h1>
 
 <div class="education-section">
     <div class="education-item">
-        <h2>Engineering Degree | Telecommunications, Services & Usages</h2>
-        <p><strong>INSA Lyon</strong> – Lyon, France (2022 - 2024)</p>
+        <h2><span class="degree">Engineering Degree</span> | <span class="major">Telecommunications, Services & Usages</span></h2>
+        <p><strong><span class="school">INSA Lyon</span></strong> – Lyon, France (2022 - 2024)</p>
         <p>Focused on network engineering, telecommunications, and services.</p>
     </div>
 
     <div class="education-item">
-        <h2>Engineering Degree | Smart-ICT</h2>
-        <p><strong>INPT</strong> – Rabat, Morocco (2020 - 2024)</p>
+        <h2><span class="degree">Engineering Degree</span> | <span class="major">Smart-ICT</span></h2>
+        <p><strong><span class="school">INPT</span></strong> – Rabat, Morocco (2020 - 2024)</p>
         <p>Specialized in smart technologies and information, networking and communications.</p>
     </div>
 
     <div class="education-item">
-        <h2>Intensive Courses | Technologies and Industrial Science</h2>
-        <p><strong>Omar Ibn Abdel Aziz</strong> – Oujda, Morocco (2018 - 2020)</p>
+        <h2><span class="degree">Intensive Courses</span> | <span class="major">Technologies and Industrial Science</span></h2>
+        <p><strong><span class="school">Omar Ibn Abdel Aziz</span></strong> – Oujda, Morocco (2018 - 2020)</p>
         <p>Intensive courses in maths, physics, mechanical and electrical engineering studies.</p>
     </div>
 
     <div class="education-item">
-        <h2>Baccalaureate | Electrical Science and Technologies</h2>
-        <p><strong>Mehdi Ben Barka</strong> – Oujda, Morocco (2017 - 2018)</p>
+        <h2><span class="degree">Baccalaureate</span> | <span class="major">Electrical Science and Technologies</span></h2>
+        <p><strong><span class="school">Mehdi Ben Barka</span></strong> – Oujda, Morocco (2017 - 2018)</p>
         <p>Specialized in electrical engineering, electronics and some basics in mechanics.</p>
     </div>
 </div>

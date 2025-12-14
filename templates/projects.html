@@ -4,94 +4,78 @@
 
 {% block content %}
 <h1>My Projects</h1>
-<!-- <div class="grid-container">
-    <div class="grid-item">
-        <a href="{{ url_for('project_detail', project_name='home_lab_server') }}">
-            <img src="{{ url_for('static', filename='images/proxmox.png') }}" alt="Home Lab Server">
-            <p>Home Lab Server</p>
-        </a>
-    </div>
-    <div class="grid-item">
-        <a href="{{ url_for('project_detail', project_name='mpls_automation') }}">
-            <img src="{{ url_for('static', filename='images/mpls.png') }}" alt="MPLS Automation">
-            <p>Automation of MPLS Network Configuration</p>
-        </a>
-    </div>
-    <div class="grid-item">
-        <a href="{{ url_for('project_detail', project_name='green_guardian') }}">
-            <img src="{{ url_for('static', filename='images/GG.png') }}" alt="Green Guardian">
-            <p>Green Guardian</p>
-        </a>
-    </div>
-    <div class="grid-item">
-        <a href="{{ url_for('project_detail', project_name='3g_4g_optimization') }}">
-            <img src="{{ url_for('static', filename='images/house.png') }}" alt="3G/4G Optimization">
-            <p>Optimization of 3G/4G Coverage</p>
-        </a>
-    </div>
-    <div class="grid-item">
-        <a href="{{ url_for('project_detail', project_name='chat_app') }}">
-            <img src="{{ url_for('static', filename='images/PyQt.png') }}" alt="ChatApp">
-            <p>ChatApp</p>
-        </a>
-    </div>
+
+
+
+
+<style>
+    .projects {
+    /* display: grid; */
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.project {
+    /* display: block;
+    align-items: center; */
+    color: #61f1fd;
+    border: 1px solid #ecf0f1;
+    border-radius: 8px;
+    box-shadow: 
+        0 0 .2rem #fff,
+        0 0 .2rem #fff,
+        0 0 1.5rem #bc13fe,
+        0 0 0.8rem #bc13fe,
+        /* 0 0 2.8rem #bc13fe, */
+        inset 0 0 1.3rem #bc13fe; 
+
+
+    /* border: 2px solid #39ff14; */
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    background-color: #1f1f1f;
+    border-radius: 10px;
+    height: 300px;
+    /* min-height: max-content; */
+    width: 250px;
+    margin: auto;
+    padding: 10px 0px;
+}
+
+.project h3 {
+    /* position: relative; */
+    font-size: .8rem;
+    /* vertical-align: bottom; */
+    /* top: 50%; */
+}
+
+.project:hover {
+    background-color: #1f1f1f;
+    color: #61f1fd;
+    cursor: pointer;
+    border: 1px solid #ecf0f1;
+    box-shadow: 
+        0 0 .2rem #fff,
+        0 0 .2rem #fff,
+        0 0 1.5rem #61f1fd,
+        0 0 0.8rem #61f1fd,
+        0 0 2.8rem #61f1fd,
+        inset 0 0 1.3rem #61f1fd; 
+}
+</style>
 
 
 
 
 
 
-    <div class="exp">
-        <a href="{{ url_for('project_detail', project_name='home_lab_server') }}">
-            <div class="imbox">
-                <img src="{{ url_for('static', filename='images/proxmox.png') }}" alt="ChatApp">
-            </div>
-            <div class="title">
-                <p>Home Lab Server</p>
-            </div>
-        </a>
-    </div>
-    <div class="exp">
-        <a href="{{ url_for('project_detail', project_name='mpls_automation') }}">
-            <div class="imbox">
-                <img src="{{ url_for('static', filename='images/mpls.png') }}" alt="ChatApp">
-            </div>
-            <div class="title">
-                <p>Automation of MPLS Network Configuration</p>
-            </div>
-        </a>
-    </div>
-    <div class="exp">
-        <a href="{{ url_for('project_detail', project_name='green_guardian') }}">
-            <div class="imbox">
-                <img src="{{ url_for('static', filename='images/GG.png') }}" alt="Green Guardian">
-            </div>
-            <div class="title">
-                <p>Green Guardian</p>
-            </div>
-        </a>
-    </div>
-    <div class="exp">
-        <a href="{{ url_for('project_detail', project_name='3g_4g_optimization') }}">
-            <div class="imbox">
-                <img src="{{ url_for('static', filename='images/house.png') }}" alt="3G/4G Optimization">
-            </div>
-            <div class="title">
-                <p>Optimization of 3G/4G Coverage</p>
-            </div>
-        </a>
-    </div>
-    <div class="exp">
-        <a href="{{ url_for('project_detail', project_name='chat_app') }}">
-            <div class="imbox">
-                <img src="{{ url_for('static', filename='images/PyQt.png') }}" alt="ChatApp">
-            </div>
-            <div class="title">
-                <p>ChatApp</p>
-            </div>
-        </a>
-    </div>
-</div> -->
+
+
 
 
 
