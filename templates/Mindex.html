@@ -1,33 +1,16 @@
 {% extends 'Mbase.html' %}
 
-{% block title %}Home{% endblock %}
+{% block title %}Main menu{% endblock %}
 
 {% block content %}
-<h1>Welcome to My Website</h1>
-<p>While you are at it</p>
-
-<p>Enjoy your time</p>
-
-<div class="clock-component">
-    <div class="clock" data-theme="dark">
-        <div class="number"></div>
-        <div class="number"></div>
-        <div class="number"></div>
-        <div class="number"></div>
-        <div class="number"></div>
-        <div class="number"></div>
-        <div class="number"></div>
-        <div class="number"></div>
-        <div class="number"></div>
-        <div class="number"></div>
-        <div class="number"></div>
-        <div class="number"></div>
-        <div class="hand minute-needle"></div>
-        <div class="hand hour-needle"></div>
-        <div class="hand second-needle"></div>
-    </div>
+<h1 class="title">Menu</h1>
+<div class="phased">
+    <ul class="menu">
+        <li class="item selected">About</li>
+        <li class="item">Education</li>
+        <li class="item">Projects</li>
+        <li class="item">Contact</li>
+    </ul>
+    <div class="status" id="status">Use Up/Down, Select, Home</div>
 </div>
-
-<script src="{{ url_for('static', filename='js/time.js') }}"></script>
-
 {% endblock %}

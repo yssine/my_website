@@ -1,86 +1,335 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}{% endblock %}</title>
-    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/Mstyle.css') }}">
-    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='images/fav.ico') }}">
-    
+  <meta name="theme-color" content="#9bbc0f"/>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content= "width=device-width, user-scalable=no">
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <title>{% block title %}{% endblock %}</title>
+  <!-- <link rel="stylesheet" href="style.css" /> -->
 </head>
 <body>
-    <div class="wrapper">
-        <!-- <nav class="gooey-nav">
-            <div class="moving-strip" data-padding="8"></div>
-            <ul>
-                <li class="active" data-title="Home" title="Home">
-                    <a href="{{ url_for('index') }}">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><g data-name="98-Home"><path d="m31.63 12.22-15-12a1 1 0 0 0-1.25 0l-15 12A1 1 0 0 0 1 14h2v17a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9h4v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1V14h2a1 1 0 0 0 .63-1.78zM24 12v2h3v16h-7v-9a1 1 0 0 0-1-1h-6a1 1 0 0 0-1 1v9H5V14h3v-2H3.85L16 2.28 28.15 12z"/><rect x="12" y="11" width="8" height="3" rx="1" ry="1"/></g></svg>
-                    </a>
-                </li>
-                <li data-title="About" title="About">
-                    <a href="{{ url_for('about') }}">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><g data-name="6-User"><path d="M2 29c0-.78 1.92-1.7 3.24-2h.11l8-3a1 1 0 0 0 .65-1v-2.69a1 1 0 0 0-.57-.9A6 6 0 0 1 10 14a1 1 0 0 0-1-1v-2a1 1 0 0 0 1-1V8a6 6 0 0 1 12 0v2a1 1 0 0 0 1 1v2h2v-2a2 2 0 0 0-1-1.73V8A8 8 0 0 0 8 8v1.27A2 2 0 0 0 7 11v2a2 2 0 0 0 1 1.75 8.07 8.07 0 0 0 4 6.16v1.39L4.7 25c-.91.23-4.7 1.37-4.7 4v2a1 1 0 0 0 1 1h14v-2H2z"/><path d="M24 16a8 8 0 1 0 8 8 8 8 0 0 0-8-8zm0 14a6 6 0 1 1 6-6 6 6 0 0 1-6 6z"/><path d="M23 20h2v4h-2zM23 26h2v2h-2z"/></g></svg>
-                    </a>
-                </li>
-                <li data-title="Education" title="Education">
-                    <a href="{{ url_for('education') }}">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><g data-name="42-Education"><path d="M23 37h2v6h-2zM35 37h2v6h-2zM11 37h2v6h-2zM23 17h2v7h-2z"/><path d="M24 18a1 1 0 0 1-.388-.078l-19-8a1 1 0 0 1 0-1.844l19-8a1.013 1.013 0 0 1 .776 0l19 8a1 1 0 0 1 0 1.844l-19 8A1 1 0 0 1 24 18zM7.577 9 24 15.915 40.423 9 24 2.085z"/><path d="M10 11h2v15h-2zM36 11h2v15h-2zM42 23h-2a1 1 0 0 1-1-1v-6a1 1 0 0 1 1-1h2V9h2v12a1 1 0 0 1-.293.707l-1 1A1 1 0 0 1 42 23zm-1-2h.586l.414-.414V17h-1zM22 8h4v2h-4zM7 29h2v4H7z"/><path d="M42 34H3a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1h39a1.006 1.006 0 0 1 .555.168l3 2a1 1 0 0 1 0 1.664l-3 2A1.006 1.006 0 0 1 42 34zM4 32h37.7l1.5-1-1.5-1H4zM46 48H2a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2h44a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2zM2 38v8h44v-8z"/><path d="M29 37h2v5h-2zM17 37h2v5h-2zM5 37h2v5H5zM41 37h2v5h-2z"/></g></svg>
-                    </a>
-                </li>
-                <li data-title="Projects" title="Projects">
-                    <a href="{{ url_for('projects') }}">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><g data-name="04-planning"><path d="M10 48H5a5.006 5.006 0 0 1-5-5V9a1 1 0 0 1 .293-.707l8-8A1 1 0 0 1 9 0h22a5.006 5.006 0 0 1 5 5v3h-2V5a3 3 0 0 0-3-3H9.414L2 9.414V43a3 3 0 0 0 3 3h5zM31 48h-5v-2h5a3 3 0 0 0 3-3V22h2v21a5.006 5.006 0 0 1-5 5z"/><path d="M7 10H5V8h2a1 1 0 0 0 1-1V1h2v6a3 3 0 0 1-3 3zM31.77 22a1 1 0 0 1-.708-.293l-2.769-2.769a1 1 0 0 1 0-1.414l15.23-15.231a1 1 0 0 1 1.414 0l2.77 2.769a1 1 0 0 1 0 1.414l-15.23 15.231a1 1 0 0 1-.707.293zm-1.356-3.769 1.356 1.355L45.586 5.769 44.23 4.414z"/><path d="M32 22h-3a1 1 0 0 1-1-1v-3h2v2h2zM20 43v-2a5.006 5.006 0 0 0 5-5v-6.893a1.085 1.085 0 0 0-.825-1.093A1 1 0 0 0 23 29a1 1 0 0 1-2 0 1 1 0 0 0-2 0 1 1 0 0 1-2 0 1 1 0 0 0-2 0 1 1 0 0 1-2 0v-7a1 1 0 0 0-1.176-.986A1.086 1.086 0 0 0 11 22.107V36a5.006 5.006 0 0 0 5 5v2a7.008 7.008 0 0 1-7-7V22.107a3.082 3.082 0 0 1 2.5-3.066A3 3 0 0 1 15 22v4.171a3.114 3.114 0 0 1 3 .595 2.994 2.994 0 0 1 4 0l.058-.051a3.006 3.006 0 0 1 2.439-.673A3.082 3.082 0 0 1 27 29.107V36a7.008 7.008 0 0 1-7 7z"/><path d="M13 29h2v3h-2zM17 29h2v3h-2zM21 29h2v3h-2zM23 48H13a1 1 0 0 1-1-1v-6h2v5h8v-5h2v6a1 1 0 0 1-1 1zM15 10a3 3 0 1 1 3-3 3 3 0 0 1-3 3zm0-4a1 1 0 1 0 1 1 1 1 0 0 0-1-1zM22 24a3 3 0 1 1 3-3 3 3 0 0 1-3 3zm0-4a1 1 0 1 0 1 1 1 1 0 0 0-1-1z"/><path d="M24 20h5v2h-5zM23 19h-2c0-10.646-3.986-11-4.027-11L17 6c.245 0 6 .148 6 13zM32 9h-2V7a1 1 0 0 0-1-1h-2V4h2a3 3 0 0 1 3 3z"/></g></svg>
-                    </a>
-                </li>
-                <li data-title="Contact Me" title="Contact Me">
-                    <a href="{{ url_for('contact') }}">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M24.52 2h-15A3.48 3.48 0 0 0 6 5.48V7H5a1 1 0 0 0 0 2h1v6H5a1 1 0 0 0 0 2h1v6H5a1 1 0 0 0 0 2h1v1.52A3.48 3.48 0 0 0 9.48 30h15A3.48 3.48 0 0 0 28 26.52v-21A3.48 3.48 0 0 0 24.52 2zM26 26.52A1.49 1.49 0 0 1 24.52 28h-15A1.49 1.49 0 0 1 8 26.52V25a1 1 0 0 0 0-2v-6a1 1 0 0 0 0-2V9a1 1 0 0 0 0-2V5.48A1.49 1.49 0 0 1 9.48 4h15A1.49 1.49 0 0 1 26 5.48z"/><path d="M20 15.6a3.94 3.94 0 0 0 1-2.6 4 4 0 0 0-8 0 3.94 3.94 0 0 0 1 2.6 5.48 5.48 0 0 0-3 4.87V23a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1v-2.53a5.48 5.48 0 0 0-3-4.87zM17 11a2 2 0 1 1-2 2 2 2 0 0 1 2-2zm4 11h-8v-1.53A3.48 3.48 0 0 1 16.47 17h1.06A3.48 3.48 0 0 1 21 20.47z"/></svg>
-                    </a>
-                </li>
-            </ul>
-        </nav> -->
-        
-
-
-
-        <div class="navbar">
-            <span class="menu-icon" onclick="toggleMenu()">☰</span>
-        </div>
-    
-        <div class="menu" id="dropdownMenu">
-            <a href="{{ url_for('index') }}">Home</a>
-            <a href="{{ url_for('about') }}">About</a>
-            <a href="{{ url_for('education') }}">Education</a>
-            <a href="{{ url_for('projects') }}">Projects</a>
-            <a href="{{ url_for('contact') }}">Contact</a>
-        </div>
-        
-        <div class="container">
-            {% block content %}{% endblock %}
-        </div>
-        
-        <footer>
-            <p>© 2024 Yassine LAHMER - All Rights Reserved</p>
-        </footer>
+  <div class="gameboy">
+    <div class="screen">
+      {% block content %}{% endblock %}
     </div>
 
-    <script>
-        function toggleMenu() {
-            document.getElementById("dropdownMenu").classList.toggle("active");
-        }
-        document.addEventListener("click", function(event) {
-            let menu = document.getElementById("dropdownMenu");
-            let menuIcon = document.querySelector(".menu-icon");
-            
-            if (!menu.contains(event.target) && !menuIcon.contains(event.target)) {
-                menu.classList.remove("active");
-            }
-        });
-    </script>
-    <!-- <script src="{{ url_for('static', filename='js/script.js') }}"></script>
-    <script src="{{ url_for('static', filename='js/nav.js') }}"></script> -->
-
+    <div class="controls">
+      <div class="actions">
+        <button id="btn-home" class="btn" style="font-family: 'Courier New', Courier, monospace; background-color: #c0392b;">HOME</button> 
+        <button id="btn-select" class="btn" style="font-family: 'Courier New', Courier, monospace; background-color: #1e1e1e;">SELECT</button>
+      </div>
+      <div class="dpad">
+        <button id="btn-up" class="btn btn-small" >▲</button>
+        <button id="btn-down" class="btn btn-small" >▼</button>
+      </div>
+    </div>
+  </div>
+<!-- <audio id="audio" src="../beep.mp3"></audio> -->
+  <!-- <script src="app.js"></script> -->
 </body>
 </html>
+<style>
+  /* style.css */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  /* font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif; */
+  /* font-family: 'Courier New', Courier, monospace; */
+  font-family: 'Press Start 2P', cursive;
+  touch-action: manipulation;
+}
+
+body {
+  background: #222;
+  color: #306230;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  overflow: hidden; 
+
+}
+
+.gameboy {
+  display: flex;
+  width: 80vw;
+  max-width: 500px;
+  min-width: 350px;
+  min-height: 90dvh;
+  max-height: 600px;
+  background: #8b8b8b;
+  border-radius: 24px;
+  padding: 16px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+  flex-direction: column;
+}
+
+.phased{
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.screen {
+  display: flex;
+  flex-direction: column;
+  background: #9bbc0f;
+  border-radius: 12px;
+  padding: 20px 12px;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.6);
+  margin-bottom: 16px;
+  flex-grow: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  /* z-index: -1; */
+  /* background: repeating-linear-gradient(
+        to bottom,
+        rgba(155,155,15,1) 0px,
+        rgba(155,155,15,1) 1px,
+        transparent 2px,
+        transparent 4px
+      ); */
+  
+}
+
+
+
+
+.title {
+  font-size: 20px;
+  margin-bottom: 8px;
+  text-align: center;
+  text-shadow: 0px 1px #40407a;
+
+}
+
+.menu {
+  list-style: none;
+  margin-bottom: 8px;
+  /* margin-bottom: auto; */
+  text-shadow: 0px 1px #274615;
+  font-size: 14px;
+
+}
+
+.item {
+  padding: 8px;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+.item.selected {
+  background: rgba(0,0,0,0.25);
+  color: #f5f5f5;
+  color: #142231;
+  font-weight: bolder;
+
+}
+
+.item.selected::before{
+  content: '> ';
+  /* content: '▶ '; */
+  /* margin-left: -20px; */
+}
+
+.status {
+  font-size: 12px;
+  opacity: 0.8;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bolder;
+  position: relative;
+  bottom: 10px;
+  margin-top: auto;
+  color: #142231;
+}
+
+.controls {
+  display: flex;
+  position: relative;
+  bottom: 0px;
+  justify-content: space-between;
+  gap: 16px;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+  margin-top: auto;
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-family: 'Courier New', Courier, monospace;
+  min-width: 100px;
+}
+
+.dpad {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-left: auto;
+  /* margin-top: auto; */
+}
+
+.btn {
+  border: none;
+  border-radius: 999px;
+  padding: 10px 16px;
+  background: #666;
+  color: #fff;
+  font-weight: 600;
+  font-size: 14px;
+  box-shadow: 0 4px 0 #444;
+  /* active: none; */
+}
+
+.btn-small {
+  width: 60px;
+}
+
+.btn:active {
+  transform: translateY(2px);
+  box-shadow: 0 2px 0 #444;
+}
+
+
+
+
+.vmenum{
+  list-style-position: inside;
+  font-size: 13px;
+  text-shadow: 0px 1px #274615;
+  line-height: 1.2;
+
+
+}
+
+.blogtext{
+  text-shadow: 0px 1px #274615;
+  padding: 5px 3px;
+  font-size: 13px;
+  line-height: 1.2;
+  margin-top: 10px;
+}
+.blogtext a{
+  text-decoration: none;
+  color: #116e11;
+  text-shadow: 0px 1px #274615;
+
+}
+
+</style>
+
+<script>
+  // app.js
+const items = Array.from(document.querySelectorAll('.item'));
+const statusEl = document.getElementById('status');
+// const projects = Array.from(document.querySelectorAll('.project'));
+// const statusEp = document.getElementById('status');
+
+let currentIndex = 0;
+// let currentindexp = 0;
+
+
+function renderSelection() {
+  items.forEach((el, i) => {
+    if (items){
+    el.classList.toggle('selected', i === currentIndex);
+  }});
+}
+
+function moveSelection(delta) {
+  if (items){
+  currentIndex = (currentIndex + delta + items.length) % items.length;
+  renderSelection();
+  statusEl.textContent = `Selected: ${items[currentIndex].textContent}`;
+}}
+
+function onHome() {
+  // currentIndex = 0;
+  // renderSelection();
+  // statusEl.textContent = 'Back to home';
+  window.location.href = "{{ url_for('index') }}";
+
+  
+}
+
+
+
+function onSelect() {
+  const item = items[currentIndex].textContent;
+  statusEl.textContent = `Selected "${item}"`;
+  // console.log(item);
+  if (items){  
+    if (item === "About") {
+        window.location.href = "{{ url_for('about') }}";
+    } else if (item === "Education") {
+        window.location.href = "{{ url_for('education') }}";
+    } else if (item === "Projects") {
+        window.location.href = "{{ url_for('projects') }}";
+    } else if (item === "Contact") {
+        window.location.href = "{{ url_for('contact') }}";
+    } else if (item === "Home Lab Server") {
+        window.location.href = "{{ url_for('project_detail', project_name='home_lab_server') }}";
+    } else if (item === "3G/4G coverage Optimization") {
+        window.location.href = "{{ url_for('project_detail', project_name='3g_4g_optimization') }}";
+    } else if (item === "Green Guardian") {
+        window.location.href = "{{ url_for('project_detail', project_name='green_guardian') }}";
+    } else if (item === "MPLS Automation") {
+        window.location.href = "{{ url_for('project_detail', project_name='mpls_automation') }}";
+    } else if (item === "Chat App") {
+        window.location.href = "{{ url_for('project_detail', project_name='chat_app') }}";
+    } else if (item === "Portfolio") {
+        window.location.href = "{{ url_for('project_detail', project_name='portfolio') }}";
+    }
+  }
+}
+
+// Haptic helper using Vibration API
+function haptic() {
+  if (navigator.vibrate) {
+    navigator.vibrate(30); // short vibration; adjust as desired
+  }
+}
+
+document.getElementById('btn-up').addEventListener('click', () => {
+  moveSelection(-1);
+  haptic();
+});
+
+document.getElementById('btn-down').addEventListener('click', () => {
+  moveSelection(1);
+  haptic();
+});
+
+document.getElementById('btn-home').addEventListener('click', () => {
+  onHome();
+  haptic();
+});
+
+document.getElementById('btn-select').addEventListener('click', () => {
+  onSelect();
+  haptic();
+});
+
+// Initial render
+renderSelection();
+
+
+
+
+// function pnS() {
+//     var audio = document.getElementById('audioS');
+//     audio.play();
+// }
+// function pnW() {
+//     var audio = document.getElementById('audioW');
+//     audio.play();
+// }
+
+
+
+
+</script>

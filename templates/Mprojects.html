@@ -1,39 +1,41 @@
 {% extends 'Mbase.html' %}
 
-{% block title %}Projects{% endblock %}
+{% block title %} Projects {% endblock %}
 
 {% block content %}
-<h1>My Projects</h1>
-
-
-
-<div class="projects">
-    <a href="{{ url_for('project_detail', project_name='home_lab_server') }}" class="project">
-        <img src="{{ url_for('static', filename='images/proxmox.png') }}" style="height: 190px; width: 190px;" alt="Home Lab Server">
-        <h3>Home Lab Server</h3>
-    </a>
-    <a href="{{ url_for('project_detail', project_name='mpls_automation') }}" class="project">
-        <img src="{{ url_for('static', filename='images/mpls.png') }}" style="height: 190px; width: 190px;" alt="Home Lab Server">
-        <h3>Automation of MPLS Network Configuration</h3>
-    </a>
-    <a href="{{ url_for('project_detail', project_name='green_guardian') }}" class="project">
-        <img src="{{ url_for('static', filename='images/GG.png') }}" style="width: 190px; height: 190px;" alt="Home Lab Server">
-        <h3>Green Guardian</h3>
-    </a>
-    <a href="{{ url_for('project_detail', project_name='3g_4g_optimization') }}"class="project">
-        <img src="{{ url_for('static', filename='images/house.png') }}" style="height: 190px; width: 190px;" alt="Home Lab Server">
-        <h3>Optimization of 3G/4G Coverage</h3>
-    </a>
-    <a href="{{ url_for('project_detail', project_name='chat_app') }}" class="project">
-        <img src="{{ url_for('static', filename='images/PyQt.png') }}" style="height: 190px; width: 190px;" alt="Home Lab Server">
-        <h3>ChatApp</h3>
-    </a>
-    <a href="{{ url_for('project_detail', project_name='portfolio') }}" class="project">
-        <img src="{{ url_for('static', filename='images/term.png') }}" style="height: 190px; width: 190px;" alt="Home Lab Server">
-        <h3>Personal website</h3>
-    </a>
-    
+<h1 class="title">Projects</h1>
+<div class="phased">
+    <ul class="projectlist">
+        <li class="selected item">Home Lab Server</li>
+        <li class="item">3G/4G coverage Optimization</li>
+        <li class="item">Green Guardian</li>
+        <li class="item">MPLS Automation</li>
+        <li class="item">Chat App</li>
+        <li class="item">Portfolio</li>
+    </ul>
+    <div class="status" id="status">Use Up/Down, Select, Home</div>
+    <!-- <div class="status" id="status">Use Up/Down, Select, Home</div> -->
 </div>
+
+<style>
+    .projectlist{
+        list-style: none;
+        text-shadow: 0px 1px #274615;
+        font-size: 14px;
+    }
+    .item.selected{
+        background: rgba(0,0,0,0.25);
+        color: #f5f5f5;
+        color: #142231;
+        font-weight: bolder;
+    }
+    .item{
+        padding: 8px;
+        border-radius: 6px;
+        font-size: 16px;
+    }
+    
+</style>
 
 
 
